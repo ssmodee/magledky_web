@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Magledky — Personalizované 3D magnetky</title>
+<meta name="description" content="Personalizované 3D magnetky s originálními motivy. Demonstrační školní e-shop.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#domu" aria-label="Magledky">Magledky</a>
+  <nav id="menu">
+    <a href="#domu">Domů</a><a href="#produkty">Produkty</a><a href="#vlastni">Vlastní magnetka</a><a href="#o-nas">O nás</a><a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="nr">
+    <button class="cart" id="cartBtn" aria-label="Otevřít košík">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span>Košík</span><b id="cartCount">0</b>
+    </button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="domu">
+  <div class="hl">
+    <span class="tag">3D magnetky na míru</span>
+    <h1 class="rv">Tvoje nápady.<br><em>Ve 3D.</em></h1>
+    <p class="lead rv">Proměň svou lednici v něco osobního. Vyber si originální 3D magnetku nebo navrhni vlastní.</p>
+    <a class="btn" href="#vlastni">Vytvořit vlastní magnetku <span>→</span></a>
+  </div>
+  <div class="stack" id="stack" aria-hidden="true"><div class="m m1"></div><div class="m m2"></div><div class="m m3"></div></div>
+  <span class="scroll">Objev více</span>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="mt"></div></div>
+
+<section class="sec custom" id="vlastni"><div class="sh"><div><span class="tag">Tvůj návrh</span><h2>Vytvoř si vlastní.</h2></div><p>Od nápadu k magnetce. Vyzkoušej si konfigurátor.</p></div><div class="builder"><div class="preview"><span class="note">Živý náhled · ilustrace</span><div id="previewArt"></div><span id="previewSize"></span></div><form id="customForm"><label>Vlastní text<input id="customText" maxlength="24" value="Ahoj!" placeholder="Tvoje jméno"></label><label>Barva<select id="customColor"><option value="#93c5fd">Ledová modrá</option><option value="#c4b5fd">Levandulová</option><option value="#fda4af">Růžová</option><option value="#86efac">Mátová</option><option value="#f8fafc">Bílá</option></select></label><label>Tvar<select id="customShape"><option value="round">Kruh</option><option value="square">Zaoblený čtverec</option><option value="heart">Srdce</option><option value="star">Hvězda</option></select></label><label>Velikost<select id="customSize"><option>4 cm</option><option selected>6 cm</option><option>8 cm</option></select></label><label>Vlastní obrázek (PNG, JPEG, WebP; max. 2 MB)<input id="customImage" type="file" accept="image/png,image/jpeg,image/webp"></label><button type="button" class="lnk" id="removeImage">Odebrat obrázek</button><p class="note" id="imageStatus" role="status">Obrázek zůstává pouze v prohlížeči.</p><div class="tot"><span>Demo cena</span><b>99 Kč</b></div><button class="btn full" type="submit">Přidat vlastní magnetku do košíku</button></form></div></section><section class="sec" id="produkty">
+  <div class="sh">
+    <h2 class="rv">Produkty</h2>
+    <div class="f" id="filters" role="group" aria-label="Filtr kategorií"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="sec dark" id="o-nas">
+  <div class="ab">
+    <div>
+      <span class="tag w">O značce</span>
+      <h2 class="rv">Malé magnetky.<br>Velká <em>originalita.</em></h2>
+    </div>
+    <div class="at">
+      <p class="rv">Jsme školní podnikatelský tým. Naším konceptem jsou personalizované 3D magnetky na lednici, které promění vaše nápady v originální dekorace.</p>
+      <p class="rv">Vyber si motiv, barvu a velikost nebo přidej vlastní text či obrázek.</p>
+    </div>
+  </div>
+  <ul class="vals">
+    <li class="rv"><span>01</span><h3>Originalita</h3><p>Vlastní motivy, žádné cizí značky ani chráněné prvky.</p></li>
+    <li class="rv"><span>02</span><h3>Minimalismus</h3><p>Čisté tvary, silný kontrast, nic navíc.</p></li>
+    <li class="rv"><span>03</span><h3>Personalizace</h3><p>Vlastní jména, obrázky a tvary podle tvých představ.</p></li>
+    <li class="rv"><span>04</span><h3>Sběratelství</h3><p>Kombinuj motivy a skládej si vlastní sadu.</p></li>
+  </ul>
+</section>
+
+<section class="sec" id="kontakt">
+  <div class="ct2">
+    <div>
+      <h2 class="rv">Kontakt</h2>
+      <p class="lead">Dotaz, spolupráce nebo zpětná vazba? Napiš nám.</p>
+      <dl class="info">
+        <dt>E-mail</dt><dd>info@priklad.cz</dd>
+        <dt>Instagram</dt><dd>@magledky.demo</dd>
+        <dt>Škola</dt><dd>Školní podnikatelský projekt</dd>
+      </dl>
+      <p class="note">Kontaktní údaje jsou demonstrační.</p>
+    </div>
+    <form id="contactForm" class="form" novalidate>
+      <label>Jméno<input name="n" required autocomplete="name"></label>
+      <label>E-mail<input name="e" type="email" required autocomplete="email"></label>
+      <label>Zpráva<textarea name="m" rows="5" required></textarea></label>
+      <button class="btn" type="submit">Odeslat zprávu</button>
+      <p class="ok" id="contactOk" hidden>Děkujeme! Zpráva se v demo verzi nikam neodesílá.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="fg">
+    <div><a class="logo big" href="#domu">Magledky</a><p>Personalizované 3D magnetky.</p></div>
+    <nav><h4>Navigace</h4><a href="#domu">Domů</a><a href="#produkty">Produkty</a><a href="#vlastni">Vlastní magnetka</a><a href="#o-nas">O nás</a><a href="#kontakt">Kontakt</a></nav>
+    <div><h4>Kontakt</h4><p>info@priklad.cz</p><p>@magledky.demo</p></div>
+  </div>
+  <p class="demo">Demonstrační školní projekt. Nejde o skutečný e-shop, objednávky se neodesílají a neprobíhají žádné platby. © <span id="yr"></span></p>
+</footer>
+
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="Nákupní košík" aria-hidden="true">
+  <div class="dh"><h3>Košík</h3><button data-closedrawer aria-label="Zavřít">×</button></div>
+  <ul class="cl" id="cartList"></ul>
+  <div class="df">
+    <div class="tot"><span>Celkem</span><b id="cartTotal">0 Kč</b></div>
+    <button class="btn full" id="checkoutBtn">Dokončit objednávku</button>
+    <button class="lnk" id="clearBtn">Vyprázdnit košík</button>
+  </div>
+</aside>
+
+<dialog id="detail"><button class="dx" data-close aria-label="Zavřít">×</button><div class="dg" id="detailBody"></div></dialog>
+
+<dialog id="co">
+  <button class="dx" data-close aria-label="Zavřít">×</button>
+  <div class="cob" id="coForm">
+    <h3>Dokončení objednávky</h3>
+    <p class="note">Demonstrace – údaje se neodesílají a neukládají. Platba neprobíhá.</p>
+    <form id="orderForm">
+      <p>Ukázková objednávka bez zadávání osobních údajů.</p>
+      <div class="tot"><span>K úhradě (demo)</span><b id="coTotal"></b></div>
+      <button class="btn full" type="submit">Potvrdit demo objednávku</button>
+    </form>
+  </div>
+  <div class="cob" id="coDone" hidden>
+    <h3>Objednávka přijata ✓</h3>
+    <p>Díky! Toto je jen ukázka dokončení objednávky – nic se neodeslalo a nic se neplatí.</p>
+    <p class="ref" id="coRef"></p>
+    <button class="btn" data-close>Zpět do obchodu</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
